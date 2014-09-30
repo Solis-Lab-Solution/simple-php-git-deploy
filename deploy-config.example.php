@@ -137,3 +137,15 @@ define('COMPOSER_OPTIONS', '--no-dev');
  * @var string Email address
  */
 define('EMAIL_ON_ERROR', false);
+
+/**
+ * OPTIONAL
+ * Whether to invoke bower install/update
+ */
+define('USE_BOWER', false);
+
+/**
+ * OPTIONAL
+ * Whether to use Compass
+ */
+define('USE_COMPASS', false);

@@ -281,6 +281,27 @@ if (defined('USE_COMPOSER') && USE_COMPOSER === true) {
 	);
 }
 
+// Invoke bower
+if (defined('USE_BOWER') && USE_BOWER === true) {
+	// already installled
+	if (file_exists(TMP_DIR . 'bower_components')) {
+		$commands[] = sprintf(
+			'bower update'
+		);
+	} else {
+		$commands[] = sprintf(
+			'bower install'
+		);
+	}
+}
+
+// Invoke compass
+if (defined('USE_COMPASS') && USE_COMPASS === true) {
+	$commands[] = sprintf(
+		'compass compile'
+	);
+}
+
 // ==================================================[ Deployment ]===
 
 // Compile exclude parameters
