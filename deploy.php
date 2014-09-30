@@ -243,6 +243,8 @@ if (!is_dir(TMP_DIR)) {
 	);
 }
 
+putenv("PATH=" . getenv("PATH"));
+
 // Update the submodules
 $commands[] = sprintf(
 	'git submodule update --init --recursive'
@@ -298,7 +300,11 @@ if (defined('USE_BOWER') && USE_BOWER === true) {
 // Invoke compass
 if (defined('USE_COMPASS') && USE_COMPASS === true) {
 	$commands[] = sprintf(
-		'compass compile'
+		'bundle install'
+	);
+
+	$commands[] = sprintf(
+		'bundle exec compass compile'
 	);
 }
 
