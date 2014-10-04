@@ -306,6 +306,11 @@ if (defined('USE_COMPASS') && USE_COMPASS === true) {
 	$commands[] = sprintf(
 		'bundle exec compass compile'
 	);
+
+	$commands[] = sprintf(
+		'rm -Rf %sscss',
+		TMP_DIR
+	);
 }
 
 // ==================================================[ Deployment ]===
